@@ -1,4 +1,13 @@
-
+import React from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import HomePage from './pages/HomePage'
+import ProfilePage from './pages/ProfilePage'
+import SharePage from './pages/SharePage'
+import { useSelector } from 'react-redux'
+import { RootState } from './redux/store'
+import { ToastContainer } from 'react-toastify'
 
 const RequireAuth: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const user = useSelector((s: RootState)=> s.auth.user)
